@@ -61,3 +61,18 @@ Prompt: also add these adrs: customer entity as Symfony user provider, using Sym
 
 Prompt: please commit
 
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: adrs should be stored in docs/adrs.md file
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: lets start working on defining ADRs
+
+Use Symfony 8.x
+
+Context: The task requires a PHP framework for building a REST API. Multiple options exist (Laravel, Slim, API Platform, plain PHP).
+Decision: Use Symfony 8.x as the application framework.
+
+Reasons:
+- personal proficiency + suggested as a recommended ecosystem
