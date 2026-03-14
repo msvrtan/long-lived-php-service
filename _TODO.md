@@ -10,6 +10,6 @@
   - [x] UUID v7 for entity identification
   - [x] JWT authentication via lexik/jwt-authentication-bundle
   - [x] Customer entity as Symfony user provider
-  - [ ] Symfony Messenger for queue processing
+  - [x] Symfony Messenger for queue processing
   - [ ] Fixtures for test data
   - [ ] CI via GitHub Actions

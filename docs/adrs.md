@@ -77,3 +77,14 @@
 **Context:** JWT authentication requires a user provider to validate credentials on login.
 
 **Decision:** Create a `Customer` entity, configured as the Symfony Security user provider. Use bcrypt for password hashing.
+
+## ADR-008: Symfony Messenger with Filesystem Transport
+
+**Status:** Accepted
+
+**Context:** The application needs asynchronous job processing for file conversions. A message queue is required to dispatch conversion jobs and process them in a background worker.
+
+**Decision:** Use `symfony/messenger` with the filesystem transport (`filesystem://%kernel.project_dir%/var/messenger`) configured via the `MESSENGER_TRANSPORT_DSN` environment variable. In the test environment, use `sync://` transport for synchronous execution.
+
+**Reasons:**
+- Zero infrastructure: no external message broker (RabbitMQ, Redis) required — messages are stored as files on disk

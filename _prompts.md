@@ -141,3 +141,13 @@ Customer entity as Symfony user provider with bcrypt hashing
 
 Context: JWT authentication requires a user provider to validate credentials on login
 Decision: create a `Customer` entity, configured as the Symfony Security user provider. Use bcrypt for password hashing.
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:31:03Z
+
+Prompt: new adr
+
+Symfony Messenger using filesystem
+
+Context: The application needs asynchronous job processing for file conversions. A message queue is required to dispatch conversion jobs and process them in a background worker.
+Decision: Use `symfony/messenger` with the filesystem transport (`filesystem://%kernel.project_dir%/var/messenger`) configured via the `MESSENGER_TRANSPORT_DSN` environment variable. In the test environment, use `sync://` transport for synchronous execution.
+Reasons: zero infra: no external message broker (RabbitMQ, Redis) required — messages are stored as files on disk
