@@ -49,3 +49,15 @@ Database: using SQLite, files are `var/app.db` (dev), `var/test.db` (test)
 
 Prompt: please commit
 
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: add task to _TODO.md about defining ADRs about Symfony, PHP, Sqlite, Coding Standards, using uuid, authenticating via JWT
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: also add these adrs: customer entity as Symfony user provider, using Symfony messenger for queues, using fixtures for tests and running CI via Github actions
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: please commit
+
