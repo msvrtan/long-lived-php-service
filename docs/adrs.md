@@ -88,3 +88,11 @@
 
 **Reasons:**
 - Zero infrastructure: no external message broker (RabbitMQ, Redis) required — messages are stored as files on disk
+
+## ADR-009: Fixtures for Test Data
+
+**Status:** Accepted
+
+**Context:** Tests and development require a predictable set of test customers in the database.
+
+**Decision:** Use `doctrine/doctrine-fixtures-bundle` with 5 hardcoded customer fixtures. Each customer has a deterministic UUID defined as a class constant, plain password `test` hashed with bcrypt.

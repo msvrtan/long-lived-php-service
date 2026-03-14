@@ -11,5 +11,5 @@
   - [x] JWT authentication via lexik/jwt-authentication-bundle
   - [x] Customer entity as Symfony user provider
   - [x] Symfony Messenger for queue processing
-  - [ ] Fixtures for test data
+  - [x] Fixtures for test data
   - [ ] CI via GitHub Actions

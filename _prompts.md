@@ -151,3 +151,12 @@ Symfony Messenger using filesystem
 Context: The application needs asynchronous job processing for file conversions. A message queue is required to dispatch conversion jobs and process them in a background worker.
 Decision: Use `symfony/messenger` with the filesystem transport (`filesystem://%kernel.project_dir%/var/messenger`) configured via the `MESSENGER_TRANSPORT_DSN` environment variable. In the test environment, use `sync://` transport for synchronous execution.
 Reasons: zero infra: no external message broker (RabbitMQ, Redis) required — messages are stored as files on disk
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:32:36Z
+
+Prompt: new adr
+
+Use fixtures for easier testing
+
+Context: Tests and development require a predictable set of test customers in the database.
+Decision: Use `doctrine/doctrine-fixtures-bundle` with 5 hardcoded customer fixtures. Each customer has a deterministic UUID defined as a class constant, plain password `test` hashed with bcrypt
