@@ -69,3 +69,11 @@
 
 **Reasons:**
 - Standard approach for stateless API authentication
+
+## ADR-007: Customer Entity as Symfony User Provider
+
+**Status:** Accepted
+
+**Context:** JWT authentication requires a user provider to validate credentials on login.
+
+**Decision:** Create a `Customer` entity, configured as the Symfony Security user provider. Use bcrypt for password hashing.

@@ -132,3 +132,12 @@ Context: The API needs to authenticate customers making conversion requests. A s
 Decision: Use JWT (JSON Web Tokens) for API authentication via `lexik/jwt-authentication-bundle`.
 
 Reasons: Standard approach for API authentication
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:29:30Z
+
+Prompt: new adr
+
+Customer entity as Symfony user provider with bcrypt hashing
+
+Context: JWT authentication requires a user provider to validate credentials on login
+Decision: create a `Customer` entity, configured as the Symfony Security user provider. Use bcrypt for password hashing.
