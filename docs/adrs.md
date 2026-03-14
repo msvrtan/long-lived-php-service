@@ -96,3 +96,11 @@
 **Context:** Tests and development require a predictable set of test customers in the database.
 
 **Decision:** Use `doctrine/doctrine-fixtures-bundle` with 5 hardcoded customer fixtures. Each customer has a deterministic UUID defined as a class constant, plain password `test` hashed with bcrypt.
+
+## ADR-010: CI via GitHub Actions
+
+**Status:** Accepted
+
+**Context:** The project needs automated checks to prevent regressions and keep code quality high.
+
+**Decision:** Use GitHub Actions to run `php-cs-fixer`, `phpstan`, then `phpunit` on every push and pull request.

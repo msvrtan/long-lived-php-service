@@ -12,4 +12,4 @@
   - [x] Customer entity as Symfony user provider
   - [x] Symfony Messenger for queue processing
   - [x] Fixtures for test data
-  - [ ] CI via GitHub Actions
+  - [x] CI via GitHub Actions

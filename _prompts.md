@@ -160,3 +160,12 @@ Use fixtures for easier testing
 
 Context: Tests and development require a predictable set of test customers in the database.
 Decision: Use `doctrine/doctrine-fixtures-bundle` with 5 hardcoded customer fixtures. Each customer has a deterministic UUID defined as a class constant, plain password `test` hashed with bcrypt
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:34:17Z
+
+Prompt: new adr
+
+GitHub Actions CI pipeline
+
+Context: project needs automated checks to prevent regressions and keep code quality high
+Decision: Use GitHub Actions to run php-cs-fixer, phpstan, then phpunit
