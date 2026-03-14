@@ -58,3 +58,14 @@
 **Reasons:**
 - IDs can be generated anywhere, decoupled from the database
 - Simplifies testing by removing database dependency for ID generation
+
+## ADR-006: JWT Authentication via lexik/jwt-authentication-bundle
+
+**Status:** Accepted
+
+**Context:** The API needs to authenticate customers making conversion requests. A stateless authentication mechanism is preferred for a REST API.
+
+**Decision:** Use JWT (JSON Web Tokens) for API authentication via `lexik/jwt-authentication-bundle`.
+
+**Reasons:**
+- Standard approach for stateless API authentication

@@ -121,3 +121,14 @@ Context: Entities need unique identifiers. Database autoincrement integers and U
 Decision: Use UUIDs as primary keys for all entities, v7 cause it's time-ordered. We will implement it via `symfony/uid`
 
 Reasons: IDs can be generated anywhere, decoupled from db simplifying testing
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:27:51Z
+
+Prompt: add adr
+
+JWT authentication using lexik/jwt-authentication-bundle
+
+Context: The API needs to authenticate customers making conversion requests. A stateless authentication mechanism is preferred for a REST API.
+Decision: Use JWT (JSON Web Tokens) for API authentication via `lexik/jwt-authentication-bundle`.
+
+Reasons: Standard approach for API authentication
