@@ -49,3 +49,127 @@ Database: using SQLite, files are `var/app.db` (dev), `var/test.db` (test)
 
 Prompt: please commit
 
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: add task to _TODO.md about defining ADRs about Symfony, PHP, Sqlite, Coding Standards, using uuid, authenticating via JWT
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: also add these adrs: customer entity as Symfony user provider, using Symfony messenger for queues, using fixtures for tests and running CI via Github actions
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: please commit
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: adrs should be stored in docs/adrs.md file
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: lets start working on defining ADRs
+
+Use Symfony 8.x
+
+Context: The task requires a PHP framework for building a REST API. Multiple options exist (Laravel, Slim, API Platform, plain PHP).
+Decision: Use Symfony 8.x as the application framework.
+
+Reasons:
+- personal proficiency + suggested as a recommended ecosystem
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: next adr is
+
+Require PHP 8.5
+
+Context: Symfony 8.x requires at least PHP 8.2 we will use latest PHP 8.5
+Decision: Require PHP >= 8.5 everywhere
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T00:00:00
+
+Prompt: new ADR
+
+SQLite as the application database
+
+Context: The application needs a database for storing information, while PostgreSQL is default for Symfony Doctrine it requires running a database server
+Decision: Use SQLite as the database for all environments (dev, test, production).
+
+Reasons: zero infrastructure: no database server required, just a single file (`var/app.db`)
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:24:21Z
+
+Prompt: add new ADR
+
+Coding standards
+
+Context: Consistent code style and static analysis are needed to maintain quality and catch issues early, especially in a project that will be reviewed by others.
+Decision: Enforce coding standards with `php-cs-fixer` (Symfony ruleset) and static analysis with `phpstan` (strictest level).
+
+Reasons:
+- `php-cs-fixer` auto-fixes code style violations
+- `phpstan` at max level catches warnings and errors
+- both tools integrate into CI easily
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:26:30Z
+
+Prompt: next adr
+
+Use UUID instead of autoincrement integer for entity IDs
+
+Context: Entities need unique identifiers. Database autoincrement integers and UUIDs are only options.
+Decision: Use UUIDs as primary keys for all entities, v7 cause it's time-ordered. We will implement it via `symfony/uid`
+
+Reasons: IDs can be generated anywhere, decoupled from db simplifying testing
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:27:51Z
+
+Prompt: add adr
+
+JWT authentication using lexik/jwt-authentication-bundle
+
+Context: The API needs to authenticate customers making conversion requests. A stateless authentication mechanism is preferred for a REST API.
+Decision: Use JWT (JSON Web Tokens) for API authentication via `lexik/jwt-authentication-bundle`.
+
+Reasons: Standard approach for API authentication
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:29:30Z
+
+Prompt: new adr
+
+Customer entity as Symfony user provider with bcrypt hashing
+
+Context: JWT authentication requires a user provider to validate credentials on login
+Decision: create a `Customer` entity, configured as the Symfony Security user provider. Use bcrypt for password hashing.
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:31:03Z
+
+Prompt: new adr
+
+Symfony Messenger using filesystem
+
+Context: The application needs asynchronous job processing for file conversions. A message queue is required to dispatch conversion jobs and process them in a background worker.
+Decision: Use `symfony/messenger` with the filesystem transport (`filesystem://%kernel.project_dir%/var/messenger`) configured via the `MESSENGER_TRANSPORT_DSN` environment variable. In the test environment, use `sync://` transport for synchronous execution.
+Reasons: zero infra: no external message broker (RabbitMQ, Redis) required — messages are stored as files on disk
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:32:36Z
+
+Prompt: new adr
+
+Use fixtures for easier testing
+
+Context: Tests and development require a predictable set of test customers in the database.
+Decision: Use `doctrine/doctrine-fixtures-bundle` with 5 hardcoded customer fixtures. Each customer has a deterministic UUID defined as a class constant, plain password `test` hashed with bcrypt
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:34:17Z
+
+Prompt: new adr
+
+GitHub Actions CI pipeline
+
+Context: project needs automated checks to prevent regressions and keep code quality high
+Decision: Use GitHub Actions to run php-cs-fixer, phpstan, then phpunit
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:44:00Z
+
+Prompt: please mark 002 task as completed
