@@ -33,3 +33,16 @@
 
 **Reasons:**
 - Zero infrastructure: no database server required, just a single file (`var/app.db`)
+
+## ADR-004: Coding Standards
+
+**Status:** Accepted
+
+**Context:** Consistent code style and static analysis are needed to maintain quality and catch issues early, especially in a project that will be reviewed by others.
+
+**Decision:** Enforce coding standards with `php-cs-fixer` (Symfony ruleset) and static analysis with `phpstan` (strictest level).
+
+**Reasons:**
+- `php-cs-fixer` auto-fixes code style violations
+- `phpstan` at max level catches warnings and errors
+- Both tools integrate into CI easily

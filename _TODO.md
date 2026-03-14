@@ -6,7 +6,7 @@
   - [x] Symfony as the application framework
   - [x] PHP as the programming language
   - [x] SQLite as the database
-  - [ ] Coding standards (PSR & php-cs-fixer)
+  - [x] Coding standards (PSR & php-cs-fixer)
   - [ ] UUID v7 for entity identification
   - [ ] JWT authentication via lexik/jwt-authentication-bundle
   - [ ] Customer entity as Symfony user provider

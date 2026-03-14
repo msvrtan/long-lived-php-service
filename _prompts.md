@@ -96,3 +96,17 @@ Context: The application needs a database for storing information, while Postgre
 Decision: Use SQLite as the database for all environments (dev, test, production).
 
 Reasons: zero infrastructure: no database server required, just a single file (`var/app.db`)
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:24:21Z
+
+Prompt: add new ADR
+
+Coding standards
+
+Context: Consistent code style and static analysis are needed to maintain quality and catch issues early, especially in a project that will be reviewed by others.
+Decision: Enforce coding standards with `php-cs-fixer` (Symfony ruleset) and static analysis with `phpstan` (strictest level).
+
+Reasons:
+- `php-cs-fixer` auto-fixes code style violations
+- `phpstan` at max level catches warnings and errors
+- both tools integrate into CI easily
