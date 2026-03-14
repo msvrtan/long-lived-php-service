@@ -3,10 +3,12 @@
 Each given prompt should be recorded in `_prompts.md`, using format:
 
 ```
-## Agent: {agent & model} {YYYY-MM-DD H:i:s}
+## Agent: {agent & model} {datetime in ISO 8601}
 
 Prompt: {prompt}
 ```
+
+Before recording, run `date -u +"%Y-%m-%dT%H:%M:%SZ"` to get the current UTC datetime.
 
 # Coding Standards
 
