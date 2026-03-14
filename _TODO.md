@@ -13,3 +13,11 @@
   - [x] Symfony Messenger for queue processing
   - [x] Fixtures for test data
   - [x] CI via GitHub Actions
+[ ] 003: Install Symfony 8.x
+[ ] 004: Install required libraries
+  - [ ] symfony/uid
+  - [ ] lexik/jwt-authentication-bundle
+  - [ ] symfony/messenger
+  - [ ] doctrine/doctrine-fixtures-bundle
+  - [ ] phpstan
+  - [ ] php-cs-fixer

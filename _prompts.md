@@ -173,3 +173,7 @@ Decision: Use GitHub Actions to run php-cs-fixer, phpstan, then phpunit
 ## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:44:00Z
 
 Prompt: please mark 002 task as completed
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:49:16Z
+
+Prompt: next task should be installing symfony
