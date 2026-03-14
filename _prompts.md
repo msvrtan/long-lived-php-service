@@ -36,7 +36,7 @@ Conversion Service: fake implementation ( no file parsing)
   - always succeeds (no error scenarios in the fake implementation)
 
 Testing Strategy:
- - uUnit tests to cover domain services
+ - Unit tests to cover domain services
  - functional tests for full API flow (upload, queue, convert, retrieve) using web test client
 
 Authentication: API authentication is handled via JWT tokens using `lexik/jwt-authentication-bundle`.
