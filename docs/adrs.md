@@ -22,3 +22,14 @@
 **Reasons:**
 - Latest stable PHP release with modern language features
 - Meets and exceeds Symfony 8.x minimum requirement
+
+## ADR-003: SQLite as the Application Database
+
+**Status:** Accepted
+
+**Context:** The application needs a database for storing information. While PostgreSQL is the default for Symfony Doctrine, it requires running a database server.
+
+**Decision:** Use SQLite as the database for all environments (dev, test, production).
+
+**Reasons:**
+- Zero infrastructure: no database server required, just a single file (`var/app.db`)

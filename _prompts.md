@@ -85,3 +85,14 @@ Require PHP 8.5
 
 Context: Symfony 8.x requires at least PHP 8.2 we will use latest PHP 8.5
 Decision: Require PHP >= 8.5 everywhere
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T00:00:00
+
+Prompt: new ADR
+
+SQLite as the application database
+
+Context: The application needs a database for storing information, while PostgreSQL is default for Symfony Doctrine it requires running a database server
+Decision: Use SQLite as the database for all environments (dev, test, production).
+
+Reasons: zero infrastructure: no database server required, just a single file (`var/app.db`)

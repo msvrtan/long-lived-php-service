@@ -5,7 +5,7 @@
 [ ] 002: Define ADRs in `docs/adrs.md`
   - [x] Symfony as the application framework
   - [x] PHP as the programming language
-  - [ ] SQLite as the database
+  - [x] SQLite as the database
   - [ ] Coding standards (PSR & php-cs-fixer)
   - [ ] UUID v7 for entity identification
   - [ ] JWT authentication via lexik/jwt-authentication-bundle
