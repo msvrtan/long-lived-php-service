@@ -110,3 +110,14 @@ Reasons:
 - `php-cs-fixer` auto-fixes code style violations
 - `phpstan` at max level catches warnings and errors
 - both tools integrate into CI easily
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14T17:26:30Z
+
+Prompt: next adr
+
+Use UUID instead of autoincrement integer for entity IDs
+
+Context: Entities need unique identifiers. Database autoincrement integers and UUIDs are only options.
+Decision: Use UUIDs as primary keys for all entities, v7 cause it's time-ordered. We will implement it via `symfony/uid`
+
+Reasons: IDs can be generated anywhere, decoupled from db simplifying testing

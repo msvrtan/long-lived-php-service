@@ -7,7 +7,7 @@
   - [x] PHP as the programming language
   - [x] SQLite as the database
   - [x] Coding standards (PSR & php-cs-fixer)
-  - [ ] UUID v7 for entity identification
+  - [x] UUID v7 for entity identification
   - [ ] JWT authentication via lexik/jwt-authentication-bundle
   - [ ] Customer entity as Symfony user provider
   - [ ] Symfony Messenger for queue processing

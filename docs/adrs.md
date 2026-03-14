@@ -46,3 +46,15 @@
 - `php-cs-fixer` auto-fixes code style violations
 - `phpstan` at max level catches warnings and errors
 - Both tools integrate into CI easily
+
+## ADR-005: UUID v7 for Entity Identification
+
+**Status:** Accepted
+
+**Context:** Entities need unique identifiers. Database autoincrement integers and UUIDs are the available options.
+
+**Decision:** Use UUID v7 as primary keys for all entities, implemented via `symfony/uid`. V7 is time-ordered, which provides natural chronological sorting.
+
+**Reasons:**
+- IDs can be generated anywhere, decoupled from the database
+- Simplifies testing by removing database dependency for ID generation
