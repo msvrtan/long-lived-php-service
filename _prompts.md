@@ -76,3 +76,12 @@ Decision: Use Symfony 8.x as the application framework.
 
 Reasons:
 - personal proficiency + suggested as a recommended ecosystem
+
+## Agent: Claude Opus 4.6 (1M context) 2026-03-14 00:00:00
+
+Prompt: next adr is
+
+Require PHP 8.5
+
+Context: Symfony 8.x requires at least PHP 8.2 we will use latest PHP 8.5
+Decision: Require PHP >= 8.5 everywhere
