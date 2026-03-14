@@ -2,7 +2,7 @@
 
 
 [x] 001: Setup prompt logging
-[ ] 002: Define ADRs in `docs/adrs.md`
+[x] 002: Define ADRs in `docs/adrs.md`
   - [x] Symfony as the application framework
   - [x] PHP as the programming language
   - [x] SQLite as the database
